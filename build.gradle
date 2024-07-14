@@ -33,5 +33,3 @@ zip.dependsOn npm_build
 npm_build.dependsOn npm_test
 npm_test.dependsOn npmInstall
 npm_build.dependsOn npmInstall
-compileJava.options.fork = true
-compileJava.options.forkOptions.executable = '/usr/lib/jvm/java-1.8.0-amazon-corretto.x86_64/jre/bin/java'
