@@ -45,9 +45,7 @@ pipeline {
             steps {
                 input 'Deploy to Production?'
                 milestone(1)
-                    kubeconfigId: 'SECRET',
-                    configs: 'train-schedule-kube.yml',
-                    enableConfigSubstitution: true
+                   withKubeCredentials(kubectlCredentials: [[caCertificate: '', clusterName: 'kubernetes', contextName: '', credentialsId: 'SECRET', namespace: 'jenkins', serverUrl: 'https://172.31.31.235:6443']])
             }
         }
     }
